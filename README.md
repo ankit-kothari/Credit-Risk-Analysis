@@ -14,6 +14,6 @@ Some assumtions for the dataset:
 | LOGISTIC REGRESSSION VANILA | No Sampling | 0.50 |
 | LOGISTIC REGRESSION: CLASS WEIGHT | Using sklearn class_weight="BALANCED" | 0.59 |
 | LOGISTIC REGRESSION: WITH SAMPLING | SMOTE Over Sampling (minority class) | 0.58 |
-| XGBOOST: BOOSTING | SMOTE-Over Sampling Method | .91 |
-| MAX VOTING: BAGGING | SMOTE-Over Sampling Method | .80 |
+| XGBOOST: BOOSTING | SMOTE-Over Sampling Method | 0.91 |
+| MAX VOTING: BAGGING | SMOTE-Over Sampling Method | 0.80 |
 | ANN-KERAS | Show file differences that haven't been staged | List all new or modified files |
