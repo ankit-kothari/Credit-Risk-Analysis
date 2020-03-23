@@ -2,8 +2,9 @@
 Predicting the ability of a borrower to pay back the loan through Traditional Machine Learning Models and comparing to Ensembling Methods 
 
 Some assumtions for the dataset:
+
+| encoding | category |
 | --- | --- |
-|encoding | category |
 |1:| Defaulted |
 |0:| Paid Fine |
 
