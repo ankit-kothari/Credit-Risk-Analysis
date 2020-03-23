@@ -3,10 +3,10 @@ Predicting the ability of a borrower to pay back the loan through Traditional Ma
 
 Some assumtions for the dataset:
 
-| encoding | category |
-| --- | --- |
-|1| Defaulted |
-|0| Paid Back the amount in full |
+| encoding | category | count of rows in the dataset
+| --- | --- | --- | 
+|1| Defaulted | 5634 | 
+|0| Paid Back the amount in full | 33136 |
 
 
 | Model Description | Sampling Method | AUC | 
