@@ -5,8 +5,8 @@ Some assumtions for the dataset:
 
 | encoding | category |
 | --- | --- |
-|1:| Defaulted |
-|0:| Paid Fine |
+|1| Defaulted |
+|0| Paid Fine |
 
 
 | Model Description | Sampling Method | AUC | 
