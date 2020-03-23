@@ -16,4 +16,4 @@ Some assumtions for the dataset:
 | LOGISTIC REGRESSION: WITH SAMPLING | SMOTE Over Sampling (minority class) | 0.58 |
 | XGBOOST: BOOSTING | SMOTE-Over Sampling Method | 0.91 |
 | MAX VOTING: BAGGING | SMOTE-Over Sampling Method | 0.80 |
-| ANN-KERAS | Show file differences that haven't been staged | List all new or modified files |
+| ANN-KERAS | SMOTE-Over Sampling Method | 0.87 |
