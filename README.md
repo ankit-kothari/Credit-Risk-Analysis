@@ -3,7 +3,7 @@ Predicting the ability of a borrower to pay back the loan through Traditional Ma
 
 
 | Model Description | Sampling Method | AUC | 
-| --- | --- |
+| --- | --- | --- |
 | LOGISTIC REGRESSSION VANILA | List all new or modified files | List all new or modified files |
 | LOGISTIC REGRESSION: CLASS WEIGHT | List all new or modified files | List all new or modified files |
 | LOGISTIC REGRESSION: WITH SAMPLING | List all new or modified files | List all new or modified files |
