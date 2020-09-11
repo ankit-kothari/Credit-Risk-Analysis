@@ -1,19 +1,12 @@
 # Credit-Risk-Analysis
 Predicting the ability of a borrower to pay back the loan through Traditional Machine Learning Models and comparing to Ensembling Methods 
 
-Some assumtions for the dataset:
-
-| encoding | category | count of rows in the dataset
-| --- | --- | --- | 
-|1| Defaulted | 5634 | 
-|0| Paid Back the amount in full | 33136 |
 
 
 ## **Credit-Risk-Analysis**
 
 Predicting the ability of a borrower to pay back the loan through a classification model using traditional machine learning Models and comparing to ensembling methods
 
-## Code
 
 ### Traditional ML Model and  Ensembling techniques
 
@@ -23,7 +16,14 @@ Predicting the ability of a borrower to pay back the loan through a classificati
 
 [ankit-kothari/Credit-Risk-Analysis](https://github.com/ankit-kothari/Credit-Risk-Analysis/blob/master/credit_risk_analysis_Keras.ipynb)
 
-[Data Overview ](https://www.notion.so/c18f834fb55144a79954f951eec7a675)
+[Data Overview ]
+Some assumtions for the dataset:
+
+| encoding | category | count of rows in the dataset
+| --- | --- | --- | 
+|1| Defaulted | 5634 | 
+|0| Paid Back the amount in full | 33136 |
+
 
 ## Project
 
@@ -43,11 +43,11 @@ print(f'\nDuration: {time.time() - start_time:.0f} seconds') # print the time el
 
 - False positive rate is the number of false positives divided by the number of false positives plus the number of true negatives. This divides all the cases where we thought a loan would be paid off but it wasn't by all the loans that weren't paid off:
 
-    $fpr = fp / (fp + tn)$
+    fpr = fp / (fp + tn)
 
 - True positive rate is the number of true positives divided by the number of true positives plus the number of false negatives. This divides all the cases where we thought a loan would be paid off and it was by all the loans that were paid off:
 
-    $tpr = tp / (tp + fn)$
+    tpr = tp / (tp + fn)
 
 ## Scaling and Normalizing the data
 
@@ -64,30 +64,28 @@ def normalize(subset):
 
 ### Correlation Matrix
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc6ec36c-28e5-49ab-b5c8-c7059fb42b06/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc6ec36c-28e5-49ab-b5c8-c7059fb42b06/Untitled.png)
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr1.png" width="40%">
 
 ## Model Architecture
 
 ### Logistic Regression with vanila
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/260f0927-0237-4fcf-8bab-593a2452788c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/260f0927-0237-4fcf-8bab-593a2452788c/Untitled.png)
-
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr2.png" width="40%">
 ### Logistic Regression with Balanced weight penalty
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4ff9b2a-6cc4-4e64-8db2-0029d6275808/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4ff9b2a-6cc4-4e64-8db2-0029d6275808/Untitled.png)
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr3.png" width="40%">
 
 ### Logistic Regression with custom penalty
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/25c01ad9-0f10-4fe7-9ed9-ee152028e07c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/25c01ad9-0f10-4fe7-9ed9-ee152028e07c/Untitled.png)
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr4.png" width="40%">
 
 ### Logistic Regression with SMOTE OVER SAMPLING:
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ba4109c-9585-4e9d-820c-f890a119298c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ba4109c-9585-4e9d-820c-f890a119298c/Untitled.png)
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr5.png" width="40%">
 
 ### Logistic Regression with scaling and normalizing the data
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a79c70cd-c156-4c91-b108-2e23600b86a7/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a79c70cd-c156-4c91-b108-2e23600b86a7/Untitled.png)
-
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr6.png" width="40%">
 ### XGBOOST with scaling and normalizing the data with OVER SAMPLING
 
 **XGBOOST HYPERPARAMETER**
@@ -102,12 +100,10 @@ def normalize(subset):
 - scoring: "f1" pr "accuracy"
 - scale_pos_weight parameter impose greater penalties for errors on the minor class
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eca8fde4-05d8-474f-81ff-d283a5c9ce57/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eca8fde4-05d8-474f-81ff-d283a5c9ce57/Untitled.png)
-
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr7.png" width="40%">
 ### Modeling in Keras for Binary Classification  Using Under Sampling
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2393f7ef-afb3-4d22-a3a9-313429e41fcb/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2393f7ef-afb3-4d22-a3a9-313429e41fcb/Untitled.png)
-
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr8.png" width="40%">
 ### Model  Performance
 
 XGBOOST outperformed all the other algorithms and also was great in capturing False negatives with only 6 in a dataset of 20000 samples used for validation while also controling the False positives which were 2071. This model is great in detecting potential bad loans.
