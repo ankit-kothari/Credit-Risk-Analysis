@@ -9,6 +9,114 @@ Some assumtions for the dataset:
 |0| Paid Back the amount in full | 33136 |
 
 
+## **Credit-Risk-Analysis**
+
+Predicting the ability of a borrower to pay back the loan through a classification model using traditional machine learning Models and comparing to ensembling methods
+
+## Code
+
+### Traditional ML Model and  Ensembling techniques
+
+[ankit-kothari/Credit-Risk-Analysis](https://github.com/ankit-kothari/Credit-Risk-Analysis/blob/master/credit_risk_analysis_ML.ipynb)
+
+### Comparing XGBoost with ANN
+
+[ankit-kothari/Credit-Risk-Analysis](https://github.com/ankit-kothari/Credit-Risk-Analysis/blob/master/credit_risk_analysis_Keras.ipynb)
+
+[Data Overview ](https://www.notion.so/c18f834fb55144a79954f951eec7a675)
+
+## Project
+
+This project was aimed at exploring different traditional Machine Learning algorithms and comparing them against powerful models like ensembling methods and artificial neural networks in Keras to identify the credit risk and whether the customer will default or pay back the loan in full based on different indicators.
+
+## Sampling
+
+This dataset is an imbalanced dataset and so sampling was a must to get any good results otherwise the model will not be effective in figuring out False Negatives as they are a minority class and end up giving more bad loans.
+
+```python
+smote = SMOTE(ratio='minority')
+features_c, target_c = smote.fit_sample(features_corr, target)
+print(f'\nDuration: {time.time() - start_time:.0f} seconds') # print the time elapsed
+```
+
+## Model Evaluation Criteria
+
+- False positive rate is the number of false positives divided by the number of false positives plus the number of true negatives. This divides all the cases where we thought a loan would be paid off but it wasn't by all the loans that weren't paid off:
+
+    $fpr = fp / (fp + tn)$
+
+- True positive rate is the number of true positives divided by the number of true positives plus the number of false negatives. This divides all the cases where we thought a loan would be paid off and it was by all the loans that were paid off:
+
+    $tpr = tp / (tp + fn)$
+
+## Scaling and Normalizing the data
+
+```python
+def normalize(subset):
+   continious_columns = subset.select_dtypes(include=['float']).columns
+   mm_scaler = preprocessing.MinMaxScaler()
+   for col in continious_columns:
+     subset[col]= mm_scaler.fit_transform(subset[[col]])
+   return subset
+```
+
+## Feature Engineering
+
+### Correlation Matrix
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc6ec36c-28e5-49ab-b5c8-c7059fb42b06/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc6ec36c-28e5-49ab-b5c8-c7059fb42b06/Untitled.png)
+
+## Model Architecture
+
+### Logistic Regression with vanila
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/260f0927-0237-4fcf-8bab-593a2452788c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/260f0927-0237-4fcf-8bab-593a2452788c/Untitled.png)
+
+### Logistic Regression with Balanced weight penalty
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4ff9b2a-6cc4-4e64-8db2-0029d6275808/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4ff9b2a-6cc4-4e64-8db2-0029d6275808/Untitled.png)
+
+### Logistic Regression with custom penalty
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/25c01ad9-0f10-4fe7-9ed9-ee152028e07c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/25c01ad9-0f10-4fe7-9ed9-ee152028e07c/Untitled.png)
+
+### Logistic Regression with SMOTE OVER SAMPLING:
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ba4109c-9585-4e9d-820c-f890a119298c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ba4109c-9585-4e9d-820c-f890a119298c/Untitled.png)
+
+### Logistic Regression with scaling and normalizing the data
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a79c70cd-c156-4c91-b108-2e23600b86a7/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a79c70cd-c156-4c91-b108-2e23600b86a7/Untitled.png)
+
+### XGBOOST with scaling and normalizing the data with OVER SAMPLING
+
+**XGBOOST HYPERPARAMETER**
+
+- objective='binary:logistic' for binary classification and 'objective': 'multi:softmax' softmax for multiclass classification you also need to set num_class(number of classes)
+- subsample=0.8 = subsample, which is for each tree the % of rows taken to build the tree.
+- colsample_bytree: number of columns used by each tree.
+- max_depth = It represents the depth of each tree, which is the maximum number of different features used in each tree.
+- n_estimator = maximun number of decision tress.
+- The booster parameter allows you to set the type of model you will use when building the ensemble. The default is gbtree which builds an ensemble of decision trees. If your data isn’t too complicated, you can go with the faster and simpler gblinear option which builds an ensemble of linear models.
+- The gamma parameter can also help with controlling overfitting. It specifies the minimum reduction in the loss required to make a further partition on a leaf node of the tree.
+- scoring: "f1" pr "accuracy"
+- scale_pos_weight parameter impose greater penalties for errors on the minor class
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eca8fde4-05d8-474f-81ff-d283a5c9ce57/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eca8fde4-05d8-474f-81ff-d283a5c9ce57/Untitled.png)
+
+### Modeling in Keras for Binary Classification  Using Under Sampling
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2393f7ef-afb3-4d22-a3a9-313429e41fcb/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2393f7ef-afb3-4d22-a3a9-313429e41fcb/Untitled.png)
+
+### Model  Performance
+
+XGBOOST outperformed all the other algorithms and also was great in capturing False negatives with only 6 in a dataset of 20000 samples used for validation while also controling the False positives which were 2071. This model is great in detecting potential bad loans.
+
+The ANN performed reasonably well too with an AUC of 0.87 as compared to 0.91 from XGBOOST, also the number of false negatives were higher using this model.
+
+[Model Comparison ](https://www.notion.so/6d019d4624fe4499b0864fcf843d865f)
+
+
 | Model Description | Sampling Method | AUC | 
 | --- | --- | --- |
 | LOGISTIC REGRESSSION VANILA | No Sampling | 0.50 |
