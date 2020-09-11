@@ -70,22 +70,24 @@ def normalize(subset):
 
 ### Logistic Regression with vanila
 
-<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr2.png" width="60%">
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr2.png" width="80%">
+
 ### Logistic Regression with Balanced weight penalty
 
-<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr3.png" width="60%">
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr3.png" width="80%">
 
 ### Logistic Regression with custom penalty
 
-<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr4.png" width="60%">
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr4.png" width="80%">
 
 ### Logistic Regression with SMOTE OVER SAMPLING:
 
-<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr5.png" width="60%">
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr5.png" width="80%">
 
 ### Logistic Regression with scaling and normalizing the data
 
-<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr6.png" width="60%">
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr6.png" width="80%">
+
 ### XGBOOST with scaling and normalizing the data with OVER SAMPLING
 
 **XGBOOST HYPERPARAMETER**
@@ -100,10 +102,10 @@ def normalize(subset):
 - scoring: "f1" pr "accuracy"
 - scale_pos_weight parameter impose greater penalties for errors on the minor class
 
-<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr7.png" width="60%">
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr7.png" width="80%">
 ### Modeling in Keras for Binary Classification  Using Under Sampling
 
-<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr8.png" width="60%">
+<img src="https://github.com/ankit-kothari/data_science_journey/blob/master/github_images/cr8.png" width="80%">
 ### Model  Performance
 
 XGBOOST outperformed all the other algorithms and also was great in capturing False negatives with only 6 in a dataset of 20000 samples used for validation while also controling the False positives which were 2071. This model is great in detecting potential bad loans.
